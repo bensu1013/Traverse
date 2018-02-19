@@ -10,7 +10,7 @@ import Foundation
 import SpriteKit
 
 protocol BSUICardDisplayerDelegate: AnyObject {
-    func cardTappedAt(index: Int)
+    func cardTapped(_ card: BSSkillCard)
 }
 
 class BSUICardDisplayer: SKNode {
@@ -49,16 +49,22 @@ class BSUICardDisplayer: SKNode {
     }
     
     @objc func confirmButtonAction() {
-        // animated card destruction / usage
+        
         
         if let card = displayedCard,
             let index = visibleCards.index(of: card) {
+            // animated card destruction / usage
+            
+            delegate?.cardTapped(card.skill)
+            
             visibleCards.remove(at: index)
             confirmButton.isHidden = true
             card.removeFromParent()
             repositionCards()
+            
+            insertCard(BSSkillCard(textureType: .hangedman))
         }
-        insertCard(BSSkillCard(textureType: .hangedman))
+        
     }
     
     func insertCard(_ card: BSSkillCard) {
@@ -132,11 +138,11 @@ class BSUICardSprite: SKSpriteNode, BSNodeButton {
         return frame
     }
     
-    var card: BSSkillCard
+    var skill: BSSkillCard
     weak var displayerNode: BSUICardDisplayer?
     
     init(card: BSSkillCard) {
-        self.card = card
+        self.skill = card
         super.init(texture: SKTexture.init(imageNamed: card.textureType.rawValue), color: .blue, size: CGSize(width: 100, height: 180))
         isUserInteractionEnabled = true
     }

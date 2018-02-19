@@ -13,9 +13,7 @@ class BSGameScene: SKScene, BSUICardDisplayerDelegate {
     var parallax: BSParallaxBackground?
     var playerSprite: BSCharacterSprite?
     var cardDisplayer: BSUICardDisplayer?
-    
-    var isDisplayingCard: Bool = false
-    
+        
     override func didMove(to view: SKView) {
         
         let bgSprite = BSParallaxBackground(info: [])
@@ -64,14 +62,8 @@ class BSGameScene: SKScene, BSUICardDisplayerDelegate {
     }
     
     
-    func cardTappedAt(index: Int) {
-        if !isDisplayingCard {
-            let action = SKAction.move(to: convert(CGPoint(x:size.width / 2, y:size.height / 2), to: cardDisplayer!), duration: 1)
-            cardDisplayer?.visibleCards[index].run(action, completion: { 
-                
-            })
-            isDisplayingCard = true
-        }
+    func cardTapped(_ card: BSSkillCard) {
+        
         
     }
     
