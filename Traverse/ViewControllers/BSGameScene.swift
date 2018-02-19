@@ -36,9 +36,9 @@ class BSGameScene: SKScene, BSUICardDisplayerDelegate {
         backgroundColor = UIColor.init(red: 0.14, green: 0.15, blue: 0.3, alpha: 0.8)
         
         
-        cardDisplayer.insertCard(BSSkillCard(textureType: .chariot))
-        cardDisplayer.insertCard(BSSkillCard(textureType: .devil))
-        cardDisplayer.insertCard(BSSkillCard(textureType: .empress))
+        cardDisplayer.insertCard(BSSkillSlash(textureType: .chariot))
+        cardDisplayer.insertCard(BSSkillSlash(textureType: .devil))
+        cardDisplayer.insertCard(BSSkillSlash(textureType: .empress))
     }
     
     
@@ -63,7 +63,7 @@ class BSGameScene: SKScene, BSUICardDisplayerDelegate {
     
     
     func cardTapped(_ card: BSSkillCard) {
-        
+        card.activate(player: playerSprite!.character, enemies: [])
         
     }
     

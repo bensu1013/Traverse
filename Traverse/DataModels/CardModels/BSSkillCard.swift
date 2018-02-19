@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SpriteKit
 
 enum BSSkillCardType: String {
     
@@ -15,18 +16,27 @@ enum BSSkillCardType: String {
 }
 
 
-class BSSkillCard {
+protocol BSSkillCard: AnyObject {
     
+    var type: BSSkillCardType { get set }
+    var textureType: BSSkillCardTextureType { get set }
+    
+    func activate(player: BSCharacter, enemies: [BSCharacter])
+    
+}
+
+class BSSkillSlash: BSSkillCard {
     var type: BSSkillCardType
     var textureType: BSSkillCardTextureType
-    
     
     init(textureType texture: BSSkillCardTextureType) {
         type = .attack
         textureType = texture
-        
     }
     
+    func activate(player: BSCharacter, enemies: [BSCharacter]) {
+        player.currentHealth -= 2
+    }
     
     
 }

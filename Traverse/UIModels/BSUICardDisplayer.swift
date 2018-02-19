@@ -62,13 +62,13 @@ class BSUICardDisplayer: SKNode {
             card.removeFromParent()
             repositionCards()
             
-            insertCard(BSSkillCard(textureType: .hangedman))
+            insertCard(BSSkillSlash(textureType: .hangedman))
         }
         
     }
     
     func insertCard(_ card: BSSkillCard) {
-        let newCard = BSUICardSprite(card: card)
+        let newCard = BSUICardSprite(skill: card)
         newCard.position = CGPoint(x: -width, y: 0)
         newCard.displayerNode = self
         visibleCards.append(newCard)
@@ -141,9 +141,9 @@ class BSUICardSprite: SKSpriteNode, BSNodeButton {
     var skill: BSSkillCard
     weak var displayerNode: BSUICardDisplayer?
     
-    init(card: BSSkillCard) {
-        self.skill = card
-        super.init(texture: SKTexture.init(imageNamed: card.textureType.rawValue), color: .blue, size: CGSize(width: 100, height: 180))
+    init(skill: BSSkillCard) {
+        self.skill = skill
+        super.init(texture: SKTexture.init(imageNamed: skill.textureType.rawValue), color: .blue, size: CGSize(width: 100, height: 180))
         isUserInteractionEnabled = true
     }
     

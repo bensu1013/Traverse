@@ -15,17 +15,15 @@ enum CharacterSpriteState: String {
 
 class BSCharacterSprite: SKSpriteNode {
     
-    var health: Int
-    var energy: Int
+    var character: BSCharacter
     var uiBar: BSUICharacterBar
     var state: CharacterSpriteState
     
     var spriteSheet: BSSpriteSheet
     
     init() {
-        health = 10
-        energy = 5
-        uiBar = BSUICharacterBar()
+        character = BSCharacter()
+        uiBar = BSUICharacterBar(character: character)
         uiBar.position = CGPoint(x: 0, y: 200)
         spriteSheet = BSTextureStore.shared.characterTexture
         state = .stand
@@ -39,7 +37,12 @@ class BSCharacterSprite: SKSpriteNode {
     }
     
     func update(dt: TimeInterval) {
+        updateUI()
         animate()
+    }
+    
+    func updateUI() {
+        uiBar.updateWith(character: character)
     }
     
     func animate() {
@@ -83,11 +86,12 @@ class BSUICharacterBar: SKNode {
     var healthBar: BSUIAdjustingTextBar
     var energyBar: BSUIAdjustingTextBar
     
-    override init() {
+    init(character: BSCharacter) {
         healthBar = BSUIAdjustingTextBar(color: .red, size: CGSize(width: 160, height: 40))
         healthBar.position = CGPoint(x: 0, y: 45)
         energyBar = BSUIAdjustingTextBar(color: .red, size: CGSize(width: 160, height: 40))
         energyBar.position = CGPoint(x: 0, y: -45)
+        
         super.init()
         addChild(energyBar)
         addChild(healthBar)
@@ -95,6 +99,12 @@ class BSUICharacterBar: SKNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func updateWith(character: BSCharacter) {
+        healthBar.textNode.text = "\(character.currentHealth) / \(character.maximumHealth)"
+        energyBar.textNode.text = "\(character.currentEnergy) / \(character.maximumEnergy)"
+        healthBar.adjustingBar.size.width = healthBar.backgroundBar.size.width * CGFloat(character.currentHealth / character.maximumHealth)
     }
     
 }
@@ -109,10 +119,9 @@ class BSUIAdjustingTextBar: SKNode {
     init(color: UIColor, size: CGSize) {
         
         backgroundBar = SKSpriteNode(texture: nil, color: .black, size: size)
-        
         adjustingBar = SKSpriteNode(texture: nil, color: color, size: size)
         
-        textNode = SKLabelNode(text: "10/10")
+        textNode = SKLabelNode(text: "")
         
         super.init()
         

@@ -22,6 +22,7 @@
 		FD6B718520327A8100D393C6 /* BSCharacterSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6B718420327A8100D393C6 /* BSCharacterSprite.swift */; };
 		FDDF12CF2032A38E0082D05F /* BSSkillCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF12CE2032A38E0082D05F /* BSSkillCard.swift */; };
 		FDDF12D32032A50C0082D05F /* BSUICardDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF12D22032A50C0082D05F /* BSUICardDisplayer.swift */; };
+		FDF59D0B203A8A010049F836 /* BSCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF59D0A203A8A010049F836 /* BSCharacter.swift */; };
 		FDFF2BF12039125D003045EE /* BSSkillCardTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF2BF02039125D003045EE /* BSSkillCardTexture.swift */; };
 		FDFF2BF320392F30003045EE /* BSGenericButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF2BF220392F30003045EE /* BSGenericButton.swift */; };
 /* End PBXBuildFile section */
@@ -44,6 +45,7 @@
 		FD6B718420327A8100D393C6 /* BSCharacterSprite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSCharacterSprite.swift; sourceTree = "<group>"; };
 		FDDF12CE2032A38E0082D05F /* BSSkillCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSkillCard.swift; sourceTree = "<group>"; };
 		FDDF12D22032A50C0082D05F /* BSUICardDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSUICardDisplayer.swift; sourceTree = "<group>"; };
+		FDF59D0A203A8A010049F836 /* BSCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSCharacter.swift; sourceTree = "<group>"; };
 		FDFF2BF02039125D003045EE /* BSSkillCardTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSkillCardTexture.swift; sourceTree = "<group>"; };
 		FDFF2BF220392F30003045EE /* BSGenericButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSGenericButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,6 +113,7 @@
 		FDDF12D02032A4BE0082D05F /* DataModels */ = {
 			isa = PBXGroup;
 			children = (
+				FDF59D09203A89B30049F836 /* CharacterModels */,
 				FD0858BE2038EB4600349FDB /* CardModels */,
 				FD6B71802031533C00D393C6 /* BSPlayerGameData.swift */,
 				FD119AFD203697A700720A6F /* BSSpriteSheet.swift */,
@@ -130,6 +133,14 @@
 				FDFF2BF220392F30003045EE /* BSGenericButton.swift */,
 			);
 			path = UIModels;
+			sourceTree = "<group>";
+		};
+		FDF59D09203A89B30049F836 /* CharacterModels */ = {
+			isa = PBXGroup;
+			children = (
+				FDF59D0A203A8A010049F836 /* BSCharacter.swift */,
+			);
+			path = CharacterModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,6 +228,7 @@
 				FDDF12D32032A50C0082D05F /* BSUICardDisplayer.swift in Sources */,
 				FD6B71812031533C00D393C6 /* BSPlayerGameData.swift in Sources */,
 				FD6B716720312FE100D393C6 /* AppDelegate.swift in Sources */,
+				FDF59D0B203A8A010049F836 /* BSCharacter.swift in Sources */,
 				FD119AFE203697A700720A6F /* BSSpriteSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
