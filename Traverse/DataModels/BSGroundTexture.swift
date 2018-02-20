@@ -95,7 +95,7 @@ class BSGroundTextures {
     }
     
     func createSingleSpriteObject(from array: [[Int]]) -> SKSpriteNode {
-        let size = CGSize(width: 128 * array[0].count, height: 128 * array.count)
+        let size = CGSize(width: TileWidth * array[0].count, height: TileHeight * array.count)
         UIGraphicsBeginImageContext(size)
         let context = UIGraphicsGetCurrentContext()
         
@@ -104,7 +104,7 @@ class BSGroundTextures {
                 if let groundType = BSGroundTextureType(rawValue: textureValue),
                     let textureLocation = getTextureLocation(with: groundType) {
                     let image = BSTextureStore.shared.groundTexture.getTextureFrom(col: textureLocation.col, row: textureLocation.row).cgImage()
-                    context?.draw(image, in: CGRect(x: col * 128, y: (array.count - row - 1) * 128, width: 128, height: 128))
+                    context?.draw(image, in: CGRect(x: col * TileWidth, y: (array.count - row - 1) * TileHeight, width: TileWidth, height: TileHeight))
                 }
             }
         }

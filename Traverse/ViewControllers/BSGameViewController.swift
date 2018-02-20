@@ -18,10 +18,11 @@ class BSGameViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .green
         
+        let aspectRatio = UIScreen.main.bounds.width / UIScreen.main.bounds.height
         
         let sceneView = SKView(frame: self.view.frame)
         
-        let scene = BSGameScene(size: CGSize(width: 1280, height: 720))
+        let scene = BSGameScene(size: CGSize(width: 896 * aspectRatio, height: 896))
         scene.scaleMode = .aspectFill
         sceneView.presentScene(scene)
         sceneView.ignoresSiblingOrder = true

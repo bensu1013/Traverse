@@ -16,13 +16,13 @@ class BSGameScene: SKScene, BSUICardDisplayerDelegate {
         
     override func didMove(to view: SKView) {
         
-        let bgSprite = BSParallaxBackground(info: [])
+        let bgSprite = BSParallaxBackground(scene: self)
         bgSprite.position = CGPoint(x: self.size.width / 2, y: self.size.height / 2)
         addChild(bgSprite)
         parallax = bgSprite
         
         let node = BSCharacterSprite()
-        node.position = CGPoint(x: self.size.width / 5, y: self.size.height / 2)
+        node.position = CGPoint(x: self.size.width / 5, y: (self.size.height - CGFloat(TileHeight)) / 2 )
         addChild(node)
         playerSprite = node
         

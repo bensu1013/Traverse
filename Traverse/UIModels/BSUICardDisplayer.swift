@@ -27,7 +27,7 @@ class BSUICardDisplayer: SKNode {
     
     init(sceneSize: CGSize) {
         width = sceneSize.width / 2
-        backgroundNode = SKSpriteNode(texture: nil, color: .clear, size: CGSize(width: width, height: 128*1.5))
+        backgroundNode = SKSpriteNode(texture: nil, color: .clear, size: CGSize(width: width, height: CGFloat(TileHeight) * 1.5))
         visibleCards = []
         
         confirmButton = BSGenericButton(size: CGSize(width: 200, height: 60))
@@ -62,7 +62,7 @@ class BSUICardDisplayer: SKNode {
             card.removeFromParent()
             repositionCards()
             
-            insertCard(BSSkillSlash(textureType: .hangedman))
+            insertCard(BSSkillBlock(textureType: .hangedman))
         }
         
     }

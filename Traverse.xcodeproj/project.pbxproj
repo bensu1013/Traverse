@@ -23,6 +23,8 @@
 		FDDF12CF2032A38E0082D05F /* BSSkillCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF12CE2032A38E0082D05F /* BSSkillCard.swift */; };
 		FDDF12D32032A50C0082D05F /* BSUICardDisplayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDDF12D22032A50C0082D05F /* BSUICardDisplayer.swift */; };
 		FDF59D0B203A8A010049F836 /* BSCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF59D0A203A8A010049F836 /* BSCharacter.swift */; };
+		FDF59D0D203BABF70049F836 /* BSStatusEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF59D0C203BABF70049F836 /* BSStatusEffect.swift */; };
+		FDF59D0F203BB1A00049F836 /* BSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF59D0E203BB1A00049F836 /* BSConstants.swift */; };
 		FDFF2BF12039125D003045EE /* BSSkillCardTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF2BF02039125D003045EE /* BSSkillCardTexture.swift */; };
 		FDFF2BF320392F30003045EE /* BSGenericButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF2BF220392F30003045EE /* BSGenericButton.swift */; };
 /* End PBXBuildFile section */
@@ -46,6 +48,8 @@
 		FDDF12CE2032A38E0082D05F /* BSSkillCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSkillCard.swift; sourceTree = "<group>"; };
 		FDDF12D22032A50C0082D05F /* BSUICardDisplayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSUICardDisplayer.swift; sourceTree = "<group>"; };
 		FDF59D0A203A8A010049F836 /* BSCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSCharacter.swift; sourceTree = "<group>"; };
+		FDF59D0C203BABF70049F836 /* BSStatusEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSStatusEffect.swift; sourceTree = "<group>"; };
+		FDF59D0E203BB1A00049F836 /* BSConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSConstants.swift; sourceTree = "<group>"; };
 		FDFF2BF02039125D003045EE /* BSSkillCardTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSkillCardTexture.swift; sourceTree = "<group>"; };
 		FDFF2BF220392F30003045EE /* BSGenericButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSGenericButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +80,7 @@
 			children = (
 				FDDF12CE2032A38E0082D05F /* BSSkillCard.swift */,
 				FDFF2BF02039125D003045EE /* BSSkillCardTexture.swift */,
+				FDF59D0C203BABF70049F836 /* BSStatusEffect.swift */,
 			);
 			path = CardModels;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 				FD119AFD203697A700720A6F /* BSSpriteSheet.swift */,
 				FD68A92B203794F40097BA34 /* BSTextureStore.swift */,
 				FD0858BB2037A39500349FDB /* BSGroundTexture.swift */,
+				FDF59D0E203BB1A00049F836 /* BSConstants.swift */,
 			);
 			path = DataModels;
 			sourceTree = "<group>";
@@ -223,6 +229,8 @@
 				FD6B718520327A8100D393C6 /* BSCharacterSprite.swift in Sources */,
 				FD6B717F2031506600D393C6 /* BSMainLandingViewController.swift in Sources */,
 				FD6B71832031588900D393C6 /* BSParallaxBackground.swift in Sources */,
+				FDF59D0D203BABF70049F836 /* BSStatusEffect.swift in Sources */,
+				FDF59D0F203BB1A00049F836 /* BSConstants.swift in Sources */,
 				FDFF2BF12039125D003045EE /* BSSkillCardTexture.swift in Sources */,
 				FD119AFC2033ED5100720A6F /* BSNodeButton.swift in Sources */,
 				FDDF12D32032A50C0082D05F /* BSUICardDisplayer.swift in Sources */,

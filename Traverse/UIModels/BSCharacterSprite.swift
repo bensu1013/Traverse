@@ -24,10 +24,10 @@ class BSCharacterSprite: SKSpriteNode {
     init() {
         character = BSCharacter()
         uiBar = BSUICharacterBar(character: character)
-        uiBar.position = CGPoint(x: 0, y: 200)
+        uiBar.position = CGPoint(x: 0, y: TileHeight)
         spriteSheet = BSTextureStore.shared.characterTexture
         state = .stand
-        super.init(texture: spriteSheet.getTextureFrom(col: 0, row: 1), color: .clear, size: CGSize(width: 128, height: 128))
+        super.init(texture: spriteSheet.getTextureFrom(col: 0, row: 1), color: .clear, size: CGSize(width: TileWidth, height: TileHeight))
         isUserInteractionEnabled = true;
         addChild(uiBar)
     }
@@ -87,10 +87,10 @@ class BSUICharacterBar: SKNode {
     var energyBar: BSUIAdjustingTextBar
     
     init(character: BSCharacter) {
-        healthBar = BSUIAdjustingTextBar(color: .red, size: CGSize(width: 160, height: 40))
-        healthBar.position = CGPoint(x: 0, y: 45)
-        energyBar = BSUIAdjustingTextBar(color: .red, size: CGSize(width: 160, height: 40))
-        energyBar.position = CGPoint(x: 0, y: -45)
+        healthBar = BSUIAdjustingTextBar(color: .red, size: CGSize(width: TileWidth, height: TileHeight / 3))
+        healthBar.position = CGPoint(x: 0, y: TileHeight/3)
+        energyBar = BSUIAdjustingTextBar(color: .red, size: CGSize(width: TileWidth, height: TileHeight / 3))
+        energyBar.position = CGPoint(x: 0, y: -TileHeight/3)
         
         super.init()
         addChild(energyBar)
@@ -104,7 +104,7 @@ class BSUICharacterBar: SKNode {
     func updateWith(character: BSCharacter) {
         healthBar.textNode.text = "\(character.currentHealth) / \(character.maximumHealth)"
         energyBar.textNode.text = "\(character.currentEnergy) / \(character.maximumEnergy)"
-        healthBar.adjustingBar.size.width = healthBar.backgroundBar.size.width * CGFloat(character.currentHealth / character.maximumHealth)
+        healthBar.adjustingBar.size.width = healthBar.backgroundBar.size.width * CGFloat(character.currentHealth) / CGFloat(character.maximumHealth)
     }
     
 }

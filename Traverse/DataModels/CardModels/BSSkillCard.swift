@@ -35,8 +35,32 @@ class BSSkillSlash: BSSkillCard {
     }
     
     func activate(player: BSCharacter, enemies: [BSCharacter]) {
-        player.currentHealth -= 2
+        player.takeDamage(2)
+    }
+    
+}
+
+class BSSkillBlock: BSSkillCard {
+    var type: BSSkillCardType
+    
+    var textureType: BSSkillCardTextureType
+    
+    init(textureType texture: BSSkillCardTextureType) {
+        type = .defense
+        textureType = texture
+    }
+    
+    func activate(player: BSCharacter, enemies: [BSCharacter]) {
+        player.currentShield += 2
     }
     
     
+    
+    
 }
+
+
+
+
+
+

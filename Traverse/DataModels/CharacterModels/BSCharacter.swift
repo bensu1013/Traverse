@@ -18,6 +18,8 @@ class BSCharacter {
     
     var currentShield: Int
     
+    var statusEffects: [String:Int]
+    
     init() {
         currentHealth = 10
         maximumHealth = 10
@@ -26,8 +28,30 @@ class BSCharacter {
         maximumEnergy = 5
         
         currentShield = 0
+        
+        statusEffects = [:]
     }
     
+    func takeDamage(_ amount: Int) {
+        currentShield -= amount
+        if currentShield < 0 {
+            currentHealth -= abs(currentShield)
+            currentShield = 0
+        }
+    }
     
+    func heal(for amount: Int) {
+        currentHealth += amount
+        if currentHealth > maximumHealth {
+            currentHealth = maximumHealth
+        }
+    }
+    
+    func shield(for amount: Int) {
+        currentShield += amount
+        if currentShield > 999 {
+            currentShield = 999
+        }
+    }
     
 }
