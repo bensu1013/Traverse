@@ -19,14 +19,17 @@ class BSCharacterSprite: SKSpriteNode {
     var uiBar: BSUICharacterBar
     var state: CharacterSpriteState
     
-    var spriteSheet: BSSpriteSheet
+    var standingSprites: [SKTexture] = []
+    var walkingSprites: [SKTexture] = []
     
-    init() {
-        character = BSCharacter()
-        uiBar = BSUICharacterBar(character: character)
-        uiBar.position = CGPoint(x: 0, y: TileHeight)
-        spriteSheet = BSTextureStore.shared.characterTexture
-        state = .stand
+    private var spriteSheet: BSSpriteSheet
+    
+    init(character: BSCharacter) {
+        self.character = character
+        self.uiBar = BSUICharacterBar(character: character)
+        self.uiBar.position = CGPoint(x: 0, y: TileHeight)
+        self.spriteSheet = BSTextureStore.shared.characterTexture
+        self.state = .stand
         super.init(texture: spriteSheet.getTextureFrom(col: 0, row: 1), color: .clear, size: CGSize(width: TileWidth, height: TileHeight))
         isUserInteractionEnabled = true;
         addChild(uiBar)
@@ -62,11 +65,7 @@ class BSCharacterSprite: SKSpriteNode {
     }
     
     func walkAnimate() {
-        let textures = [spriteSheet.getTextureFrom(col: 14, row: 1),
-                        spriteSheet.getTextureFrom(col: 15, row: 1),
-                        spriteSheet.getTextureFrom(col: 16, row: 1),
-                        spriteSheet.getTextureFrom(col: 17, row: 1)]
-        let animate = SKAction.animate(with: textures, timePerFrame: 0.2)
+        let animate = SKAction.animate(with: walkingSprites, timePerFrame: 0.2)
         let repeatAnimate = SKAction.repeatForever(animate)
         run(repeatAnimate, withKey: state.rawValue)
     }
@@ -76,7 +75,7 @@ class BSCharacterSprite: SKSpriteNode {
 //        let animate = SKAction.animate(with: textures, timePerFrame: 0.2)
 //        let repeatAnimate = SKAction.repeatForever(animate)
 //        run(repeatAnimate, withKey: state.rawValue)
-        texture = spriteSheet.getTextureFrom(col: 0, row: 1)
+        texture = standingSprites[0]
     }
     
 }

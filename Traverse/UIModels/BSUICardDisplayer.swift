@@ -50,7 +50,6 @@ class BSUICardDisplayer: SKNode {
     
     @objc func confirmButtonAction() {
         
-        
         if let card = displayedCard,
             let index = visibleCards.index(of: card) {
             // animated card destruction / usage

@@ -35,7 +35,9 @@ class BSSkillSlash: BSSkillCard {
     }
     
     func activate(player: BSCharacter, enemies: [BSCharacter]) {
-        player.takeDamage(2)
+        for enemy in enemies {
+            enemy.takeDamage(2)
+        }
     }
     
 }
@@ -51,7 +53,7 @@ class BSSkillBlock: BSSkillCard {
     }
     
     func activate(player: BSCharacter, enemies: [BSCharacter]) {
-        player.currentShield += 2
+        player.currentShield += 1
     }
     
     

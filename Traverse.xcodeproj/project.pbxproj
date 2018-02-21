@@ -108,7 +108,6 @@
 				FD0858BD2038B3BD00349FDB /* ViewControllers */,
 				FDDF12D12032A4E10082D05F /* UIModels */,
 				FDDF12D02032A4BE0082D05F /* DataModels */,
-				FD6B717320312FE100D393C6 /* Assets.xcassets */,
 				FD6B717520312FE100D393C6 /* LaunchScreen.storyboard */,
 				FD6B717820312FE100D393C6 /* Info.plist */,
 			);
@@ -122,8 +121,7 @@
 				FD0858BE2038EB4600349FDB /* CardModels */,
 				FD6B71802031533C00D393C6 /* BSPlayerGameData.swift */,
 				FD119AFD203697A700720A6F /* BSSpriteSheet.swift */,
-				FD68A92B203794F40097BA34 /* BSTextureStore.swift */,
-				FD0858BB2037A39500349FDB /* BSGroundTexture.swift */,
+				FDF59D10203D14BD0049F836 /* Textures */,
 				FDF59D0E203BB1A00049F836 /* BSConstants.swift */,
 			);
 			path = DataModels;
@@ -147,6 +145,16 @@
 				FDF59D0A203A8A010049F836 /* BSCharacter.swift */,
 			);
 			path = CharacterModels;
+			sourceTree = "<group>";
+		};
+		FDF59D10203D14BD0049F836 /* Textures */ = {
+			isa = PBXGroup;
+			children = (
+				FD68A92B203794F40097BA34 /* BSTextureStore.swift */,
+				FD0858BB2037A39500349FDB /* BSGroundTexture.swift */,
+				FD6B717320312FE100D393C6 /* Assets.xcassets */,
+			);
+			path = Textures;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
