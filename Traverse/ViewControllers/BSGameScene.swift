@@ -26,7 +26,6 @@ class BSGameScene: SKScene, BSUICardDisplayerDelegate {
         parallax = bgSprite
         
         
-        
         let cardDisplayer = BSUICardDisplayer(sceneSize: self.size)
         cardDisplayer.position = CGPoint(x: self.size.width / 2, y: 120)
         cardDisplayer.zPosition = 1000
@@ -45,16 +44,21 @@ class BSGameScene: SKScene, BSUICardDisplayerDelegate {
         addChild(node)
         playerSprite = node
                 
-        let enemyNode = BSCharacterSprite(character: BSCharacter())
-        enemyNode.xScale = -1
-        enemyNode.position = CGPoint(x: self.size.width / 6 * 4, y: (self.size.height - CGFloat(TileHeight)) / 2 )
-        enemyNode.standingSprites = [BSTextureStore.shared.characterTexture.getTextureFrom(col: 0, row: 0)]
-        enemyNode.walkingSprites = [BSTextureStore.shared.characterTexture.getTextureFrom(col: 0, row: 0),
-                                    BSTextureStore.shared.characterTexture.getTextureFrom(col: 1, row: 0),
-                                    BSTextureStore.shared.characterTexture.getTextureFrom(col: 2, row: 0),
-                                    BSTextureStore.shared.characterTexture.getTextureFrom(col: 3, row: 0)]
-        addChild(enemyNode)
-        enemySprites.append(enemyNode)
+        let standSprite = [BSTextureStore.shared.characterTexture.getTextureFrom(col: 0, row: 0)]
+        let walkSprite = [BSTextureStore.shared.characterTexture.getTextureFrom(col: 0, row: 0),
+                          BSTextureStore.shared.characterTexture.getTextureFrom(col: 1, row: 0),
+                          BSTextureStore.shared.characterTexture.getTextureFrom(col: 2, row: 0),
+                          BSTextureStore.shared.characterTexture.getTextureFrom(col: 3, row: 0)]
+        
+        for c in 0...2 {
+            let enemyNode = BSCharacterSprite(character: BSCharacter())
+            enemyNode.xScale = -1
+            enemyNode.position = CGPoint(x: self.size.width / 8 * CGFloat(4 + c), y: (self.size.height - CGFloat(TileHeight)) / 2 )
+            enemyNode.standingSprites = standSprite
+            enemyNode.walkingSprites = walkSprite
+            addChild(enemyNode)
+            enemySprites.append(enemyNode)
+        }
         
         
         cardDisplayer.insertCard(BSSkillSlash(textureType: .chariot))
@@ -79,7 +83,7 @@ class BSGameScene: SKScene, BSUICardDisplayerDelegate {
     func moveToNextBattle() {
         parallax?.moveLayersBy(distance: -100, duration: 4)
         playerSprite?.state = .walk
-        for enemy in enemySprites{
+        for enemy in enemySprites {
             enemy.state = .walk
         }
         let wait = SKAction.wait(forDuration: 4)

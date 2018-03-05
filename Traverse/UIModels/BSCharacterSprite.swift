@@ -117,7 +117,20 @@ class BSUIAdjustingTextBar: SKNode {
     
     init(color: UIColor, size: CGSize) {
         
-        backgroundBar = SKSpriteNode(texture: nil, color: .black, size: size)
+        let blank = [SKTexture(imageNamed: "blankBar_Left"),
+                     SKTexture(imageNamed: "blankBar_Mid"),
+                     SKTexture(imageNamed: "blankBar_Right")]
+        UIGraphicsBeginImageContext(CGSize(width: 36, height: 18))
+        let context = UIGraphicsGetCurrentContext()
+        
+        context?.draw(blank[0].cgImage(), in: CGRect(x: 0, y: 0, width: 9, height: 18))
+        context?.draw(blank[1].cgImage(), in: CGRect(x: 9, y: 0, width: 18, height: 18))
+        context?.draw(blank[2].cgImage(), in: CGRect(x: 27, y: 0, width: 9, height: 18))
+        
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        backgroundBar = SKSpriteNode(texture: SKTexture.init(image: image!), color: .clear, size: size)
         adjustingBar = SKSpriteNode(texture: nil, color: color, size: size)
         
         textNode = SKLabelNode(text: "")
