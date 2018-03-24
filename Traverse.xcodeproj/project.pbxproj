@@ -25,6 +25,9 @@
 		FDF59D0B203A8A010049F836 /* BSCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF59D0A203A8A010049F836 /* BSCharacter.swift */; };
 		FDF59D0D203BABF70049F836 /* BSStatusEffect.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF59D0C203BABF70049F836 /* BSStatusEffect.swift */; };
 		FDF59D0F203BB1A00049F836 /* BSConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF59D0E203BB1A00049F836 /* BSConstants.swift */; };
+		FDF59D182065E4660049F836 /* BSUIAdjustingTextBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF59D172065E4660049F836 /* BSUIAdjustingTextBar.swift */; };
+		FDF59D1A2065E47F0049F836 /* BSUICharacterBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF59D192065E47F0049F836 /* BSUICharacterBar.swift */; };
+		FDF59D1C2065E63C0049F836 /* BSParallaxSpriteLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF59D1B2065E63C0049F836 /* BSParallaxSpriteLayer.swift */; };
 		FDFF2BF12039125D003045EE /* BSSkillCardTexture.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF2BF02039125D003045EE /* BSSkillCardTexture.swift */; };
 		FDFF2BF320392F30003045EE /* BSGenericButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF2BF220392F30003045EE /* BSGenericButton.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +53,9 @@
 		FDF59D0A203A8A010049F836 /* BSCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSCharacter.swift; sourceTree = "<group>"; };
 		FDF59D0C203BABF70049F836 /* BSStatusEffect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSStatusEffect.swift; sourceTree = "<group>"; };
 		FDF59D0E203BB1A00049F836 /* BSConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSConstants.swift; sourceTree = "<group>"; };
+		FDF59D172065E4660049F836 /* BSUIAdjustingTextBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSUIAdjustingTextBar.swift; sourceTree = "<group>"; };
+		FDF59D192065E47F0049F836 /* BSUICharacterBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSUICharacterBar.swift; sourceTree = "<group>"; };
+		FDF59D1B2065E63C0049F836 /* BSParallaxSpriteLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSParallaxSpriteLayer.swift; sourceTree = "<group>"; };
 		FDFF2BF02039125D003045EE /* BSSkillCardTexture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSSkillCardTexture.swift; sourceTree = "<group>"; };
 		FDFF2BF220392F30003045EE /* BSGenericButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BSGenericButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -131,7 +137,10 @@
 			isa = PBXGroup;
 			children = (
 				FD6B71822031588900D393C6 /* BSParallaxBackground.swift */,
+				FDF59D1B2065E63C0049F836 /* BSParallaxSpriteLayer.swift */,
 				FD6B718420327A8100D393C6 /* BSCharacterSprite.swift */,
+				FDF59D192065E47F0049F836 /* BSUICharacterBar.swift */,
+				FDF59D172065E4660049F836 /* BSUIAdjustingTextBar.swift */,
 				FDDF12D22032A50C0082D05F /* BSUICardDisplayer.swift */,
 				FD119AFB2033ED5100720A6F /* BSNodeButton.swift */,
 				FDFF2BF220392F30003045EE /* BSGenericButton.swift */,
@@ -228,15 +237,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF59D182065E4660049F836 /* BSUIAdjustingTextBar.swift in Sources */,
 				FD6B716D20312FE100D393C6 /* BSGameScene.swift in Sources */,
 				FD6B716F20312FE100D393C6 /* BSGameViewController.swift in Sources */,
 				FD68A92C203794F40097BA34 /* BSTextureStore.swift in Sources */,
 				FDFF2BF320392F30003045EE /* BSGenericButton.swift in Sources */,
 				FD0858BC2037A39500349FDB /* BSGroundTexture.swift in Sources */,
 				FDDF12CF2032A38E0082D05F /* BSSkillCard.swift in Sources */,
+				FDF59D1C2065E63C0049F836 /* BSParallaxSpriteLayer.swift in Sources */,
 				FD6B718520327A8100D393C6 /* BSCharacterSprite.swift in Sources */,
 				FD6B717F2031506600D393C6 /* BSMainLandingViewController.swift in Sources */,
 				FD6B71832031588900D393C6 /* BSParallaxBackground.swift in Sources */,
+				FDF59D1A2065E47F0049F836 /* BSUICharacterBar.swift in Sources */,
 				FDF59D0D203BABF70049F836 /* BSStatusEffect.swift in Sources */,
 				FDF59D0F203BB1A00049F836 /* BSConstants.swift in Sources */,
 				FDFF2BF12039125D003045EE /* BSSkillCardTexture.swift in Sources */,

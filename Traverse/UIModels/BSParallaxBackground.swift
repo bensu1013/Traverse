@@ -27,7 +27,6 @@ let background2DArray =  [[ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
                           [ 0, 4, 5, 0, 0, 0, 4, 5, 0, 0],
                           [ 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]]
 
-// the graphics array needs to be upside down to account for context and sprite flipping afterwards
 let foreground2DArray = [[  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
                          [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
                          [  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0,  0],
@@ -88,24 +87,3 @@ class BSParallaxBackground: SKNode {
     }
     
 }
-
-class BSParallaxSpriteLayer {
-    
-    var sprite: SKSpriteNode
-    var parallaxFactor: CGFloat
-    
-    init(sprite: SKSpriteNode, factor: CGFloat) {
-        self.sprite = sprite
-        self.parallaxFactor = factor
-    }
-    
-    func moveBy(distance: CGFloat, duration: TimeInterval) {
-        let move = SKAction.moveBy(x: distance * parallaxFactor, y: 0, duration: duration)
-        sprite.run(move)
-    }
-    
-}
-
-
-
-
